@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "a-la-mode"
+version = "0.1.0"
+description = "A tool for describing pure data pipelines that enables avoiding repeating work (incrementality) and keeping old data around (provenance)"
+authors = ["thattommyhall <thattommyhall@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.5"
+"bencode.py" = "^2.1.0"
+toolz = "^0.10.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+pytest-watch = "^4.2.0"
+colorama = "^0.4.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+

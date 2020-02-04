@@ -1,0 +1,337 @@
+[[package]]
+category = "dev"
+description = "Atomic file writes."
+name = "atomicwrites"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.3.0"
+
+[[package]]
+category = "dev"
+description = "Classes Without Boilerplate"
+name = "attrs"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "19.3.0"
+
+[package.extras]
+azure-pipelines = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "pytest-azurepipelines"]
+dev = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "sphinx", "pre-commit"]
+docs = ["sphinx", "zope.interface"]
+tests = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
+
+[[package]]
+category = "main"
+description = "Simple bencode parser (for Python 2, Python 3 and PyPy)"
+name = "bencode.py"
+optional = false
+python-versions = "*"
+version = "2.1.0"
+
+[[package]]
+category = "dev"
+description = "Cross-platform colored terminal text."
+name = "colorama"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "0.4.3"
+
+[[package]]
+category = "dev"
+description = "Pythonic argument parser, that will make you smile"
+name = "docopt"
+optional = false
+python-versions = "*"
+version = "0.6.2"
+
+[[package]]
+category = "dev"
+description = "Read metadata from Python packages"
+marker = "python_version < \"3.8\""
+name = "importlib-metadata"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+version = "1.1.3"
+
+[package.dependencies]
+zipp = ">=0.5"
+
+[package.extras]
+docs = ["sphinx", "rst.linker"]
+testing = ["packaging", "importlib-resources"]
+
+[[package]]
+category = "dev"
+description = "More routines for operating on iterables, beyond itertools"
+name = "more-itertools"
+optional = false
+python-versions = "*"
+version = "5.0.0"
+
+[package.dependencies]
+six = ">=1.0.0,<2.0.0"
+
+[[package]]
+category = "dev"
+description = "Object-oriented filesystem paths"
+marker = "python_version < \"3.6\""
+name = "pathlib2"
+optional = false
+python-versions = "*"
+version = "2.3.5"
+
+[package.dependencies]
+six = "*"
+
+[[package]]
+category = "dev"
+description = "File system general utilities"
+name = "pathtools"
+optional = false
+python-versions = "*"
+version = "0.1.2"
+
+[[package]]
+category = "dev"
+description = "plugin and hook calling mechanisms for python"
+name = "pluggy"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.13.1"
+
+[package.dependencies]
+[package.dependencies.importlib-metadata]
+python = "<3.8"
+version = ">=0.12"
+
+[package.extras]
+dev = ["pre-commit", "tox"]
+
+[[package]]
+category = "dev"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+name = "py"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.8.1"
+
+[[package]]
+category = "dev"
+description = "Python<->ObjC Interoperability Module"
+marker = "sys_platform == \"darwin\""
+name = "pyobjc-core"
+optional = false
+python-versions = "*"
+version = "5.3"
+
+[[package]]
+category = "dev"
+description = "Wrappers for the Cocoa frameworks on macOS"
+marker = "sys_platform == \"darwin\""
+name = "pyobjc-framework-cocoa"
+optional = false
+python-versions = "*"
+version = "5.3"
+
+[package.dependencies]
+pyobjc-core = ">=5.3"
+
+[[package]]
+category = "dev"
+description = "Wrappers for the framework FSEvents on macOS"
+marker = "sys_platform == \"darwin\""
+name = "pyobjc-framework-fsevents"
+optional = false
+python-versions = "*"
+version = "5.3"
+
+[package.dependencies]
+pyobjc-core = ">=5.3"
+pyobjc-framework-Cocoa = ">=5.3"
+
+[[package]]
+category = "dev"
+description = "pytest: simple powerful testing with Python"
+name = "pytest"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "3.10.1"
+
+[package.dependencies]
+atomicwrites = ">=1.0"
+attrs = ">=17.4.0"
+colorama = "*"
+more-itertools = ">=4.0.0"
+pluggy = ">=0.7"
+py = ">=1.5.0"
+setuptools = "*"
+six = ">=1.10.0"
+
+[package.dependencies.pathlib2]
+python = "<3.6"
+version = ">=2.2.0"
+
+[[package]]
+category = "dev"
+description = "Local continuous test runner with pytest and watchdog."
+name = "pytest-watch"
+optional = false
+python-versions = "*"
+version = "4.2.0"
+
+[package.dependencies]
+colorama = ">=0.3.3"
+docopt = ">=0.4.0"
+pytest = ">=2.6.4"
+watchdog = ">=0.6.0"
+
+[[package]]
+category = "dev"
+description = "Python 2 and 3 compatibility utilities"
+name = "six"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+version = "1.14.0"
+
+[[package]]
+category = "main"
+description = "List processing tools and functional utilities"
+name = "toolz"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.10.0"
+
+[[package]]
+category = "dev"
+description = "Filesystem events monitoring"
+name = "watchdog"
+optional = false
+python-versions = "*"
+version = "0.10.1"
+
+[package.dependencies]
+pathtools = ">=0.1.1"
+pyobjc-framework-Cocoa = ">=4.2.2"
+pyobjc-framework-FSEvents = ">=4.2.2"
+
+[package.extras]
+watchmedo = ["PyYAML (>=3.10)", "argh (>=0.24.1)"]
+
+[[package]]
+category = "dev"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+marker = "python_version < \"3.8\""
+name = "zipp"
+optional = false
+python-versions = ">=2.7"
+version = "1.1.0"
+
+[package.extras]
+docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
+testing = ["pathlib2", "unittest2", "jaraco.itertools"]
+
+[metadata]
+content-hash = "f7f518ba5d3f9f7d5d5b4074389078e3b553ccd89ba78597cf93d7cbd110dfbc"
+python-versions = "^3.5"
+
+[metadata.files]
+atomicwrites = [
+    {file = "atomicwrites-1.3.0-py2.py3-none-any.whl", hash = "sha256:03472c30eb2c5d1ba9227e4c2ca66ab8287fbfbbda3888aa93dc2e28fc6811b4"},
+    {file = "atomicwrites-1.3.0.tar.gz", hash = "sha256:75a9445bac02d8d058d5e1fe689654ba5a6556a1dfd8ce6ec55a0ed79866cfa6"},
+]
+attrs = [
+    {file = "attrs-19.3.0-py2.py3-none-any.whl", hash = "sha256:08a96c641c3a74e44eb59afb61a24f2cb9f4d7188748e76ba4bb5edfa3cb7d1c"},
+    {file = "attrs-19.3.0.tar.gz", hash = "sha256:f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"},
+]
+"bencode.py" = [
+    {file = "bencode.py-2.1.0-py2.py3-none-any.whl", hash = "sha256:f08cb93d4bdf7ad4da675082e530d53ba02fb26ffa8b19c54c095e442a0a6bed"},
+    {file = "bencode.py-2.1.0.tar.gz", hash = "sha256:7d65b02f174097a442a2b138208aee7fe104d2ce79e7a29fb457d0e02f38fc3d"},
+]
+colorama = [
+    {file = "colorama-0.4.3-py2.py3-none-any.whl", hash = "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff"},
+    {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
+]
+docopt = [
+    {file = "docopt-0.6.2.tar.gz", hash = "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"},
+]
+importlib-metadata = [
+    {file = "importlib_metadata-1.1.3-py2.py3-none-any.whl", hash = "sha256:7c7f8ac40673f507f349bef2eed21a0e5f01ddf5b2a7356a6c65eb2099b53764"},
+    {file = "importlib_metadata-1.1.3.tar.gz", hash = "sha256:7a99fb4084ffe6dae374961ba7a6521b79c1d07c658ab3a28aa264ee1d1b14e3"},
+]
+more-itertools = [
+    {file = "more-itertools-5.0.0.tar.gz", hash = "sha256:38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4"},
+    {file = "more_itertools-5.0.0-py2-none-any.whl", hash = "sha256:c0a5785b1109a6bd7fac76d6837fd1feca158e54e521ccd2ae8bfe393cc9d4fc"},
+    {file = "more_itertools-5.0.0-py3-none-any.whl", hash = "sha256:fe7a7cae1ccb57d33952113ff4fa1bc5f879963600ed74918f1236e212ee50b9"},
+]
+pathlib2 = [
+    {file = "pathlib2-2.3.5-py2.py3-none-any.whl", hash = "sha256:0ec8205a157c80d7acc301c0b18fbd5d44fe655968f5d947b6ecef5290fc35db"},
+    {file = "pathlib2-2.3.5.tar.gz", hash = "sha256:6cd9a47b597b37cc57de1c05e56fb1a1c9cc9fab04fe78c29acd090418529868"},
+]
+pathtools = [
+    {file = "pathtools-0.1.2.tar.gz", hash = "sha256:7c35c5421a39bb82e58018febd90e3b6e5db34c5443aaaf742b3f33d4655f1c0"},
+]
+pluggy = [
+    {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
+    {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
+]
+py = [
+    {file = "py-1.8.1-py2.py3-none-any.whl", hash = "sha256:c20fdd83a5dbc0af9efd622bee9a5564e278f6380fffcacc43ba6f43db2813b0"},
+    {file = "py-1.8.1.tar.gz", hash = "sha256:5e27081401262157467ad6e7f851b7aa402c5852dbcb3dae06768434de5752aa"},
+]
+pyobjc-core = [
+    {file = "pyobjc-core-5.3.tar.gz", hash = "sha256:07554c7fb02a980a2a648f567441cd0bf031a15a7afe284cda197bd4d8b443e3"},
+    {file = "pyobjc_core-5.3-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:b96a79e04f88cb6920ff3c5d067d44dc28102daab0b34ff4e6f8c498af5e3f80"},
+    {file = "pyobjc_core-5.3-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:5b5d9d7e8c5d11b1efff84daf5f24d5e10c235f3dc66c7948b978e8ef277f2ca"},
+    {file = "pyobjc_core-5.3-cp34-cp34m-macosx_10_6_intel.whl", hash = "sha256:c6abe99229cd4fde824651e36f1d9cfbd6054f537db97b507e1e2c55b9dbb3aa"},
+    {file = "pyobjc_core-5.3-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:c35069cca043e2941cda65220b854002e6db91cd2b2f96c6259d0eac558a96e1"},
+    {file = "pyobjc_core-5.3-cp36-cp36m-macosx_10_6_intel.whl", hash = "sha256:c7a8941fb9ef200d8f63370cf7b20f63cc4a6d2a9c37d7ea33d1c358c4ec5fe4"},
+    {file = "pyobjc_core-5.3-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:00f4e9526036d33f4b4c770dee76a4f26756e5f79e586be8a05bbe1d9ff312ec"},
+    {file = "pyobjc_core-5.3-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:bd2fa9f241f7a6745adf5f0b3d5de0fbdfd377bf384950921d3c5f6b1d440545"},
+    {file = "pyobjc_core-5.3-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:e35a397935ced28df5decb4ce080ffb64252eddeda757a55c53a39326c9c5147"},
+    {file = "pyobjc_core-5.3-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:2a32cf7f2285d9dc4785ea48a7f482a71ad4e7d161fd95bf5e58e9305a69cf09"},
+]
+pyobjc-framework-cocoa = [
+    {file = "pyobjc-framework-Cocoa-5.3.tar.gz", hash = "sha256:0b2d2f4a95d2634d1545c2d5cc949cb1b1bbfd73393d3c3b483be2a18906e568"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:162e54d3fc06144de3ae244b53d3c2fe27fc99c80923f2ad6f4c884de7f4624b"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:4a87394366e969d72ac1eb3fef69555a4bb7bfcfc6e6d35cdf014b07997e29bc"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp34-cp34m-macosx_10_6_intel.whl", hash = "sha256:5d809f2868ad1e3552cf6ddd82e6299f3927c33047969d0eab93344d2c892c5f"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:ae070efea17e62cdf6e9ca90924ffe02bf85e5437eb860ca4739873bc5162020"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp36-cp36m-macosx_10_6_intel.whl", hash = "sha256:fe1831a2f5b9970522ab958bb3d91da4d522142213d825e8f04e427f782d63be"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:38739b4fd0adeaf20ca243b4602bc8212211267d42f75b977ad16cfd9ac9751c"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:ef4fea8d83252dbd23bfe5322eec52f7be491f733c34c6b18763157104908e1d"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:6cc5496e5556c848ca3ab3eeba3b66481d91f53a9a49fd068dadbe87c9e3ca68"},
+    {file = "pyobjc_framework_Cocoa-5.3-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:0a28b167c7cec5af0323166a08c8e7914da83f2205be14eb3bd9eb6c9fa69dc6"},
+]
+pyobjc-framework-fsevents = [
+    {file = "pyobjc-framework-FSEvents-5.3.tar.gz", hash = "sha256:b5570c4184c75690b3f8e5ed5034021369ae664f33539dc85e41c3a6c7e6d88c"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:4e9c5cc0e905fe0ccdcb1b86692b4b94765cfa2e86973a9d6d38a2ce084e7a63"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:6d4cf920f6b8ef3b2a5595a0d37e98127e73be0782b7f9c8c16efd1c4182da18"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp34-cp34m-macosx_10_6_intel.whl", hash = "sha256:af0686089e8dfc1c0335c0f723e856e00bc2b131a7b72a15deea33901a10084c"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:7c2b9495910a0ea13de28cab4d0640a22dd2fae12f85cb9cf0e9b4270c8a005f"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp36-cp36m-macosx_10_6_intel.whl", hash = "sha256:8e6f704d22a02e9fbe03e6c30b9932539980763487cf76b704fb7d911ad649fa"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:a47ef252d274b139bef3fd72c7bd59db6fff35de31c8df98d9ae66d8253c7380"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:3ed8a03d010ffa23eeb66d15228861d9aa14b74610655cf5ee34934fa88dc5e1"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:4dfe9cca606266713de42aee0f49c776d9d12a9ff52db7e75aa7996acc545238"},
+    {file = "pyobjc_framework_FSEvents-5.3-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:43956a26252d07ef16dbc43e0802ac2ffc3314b520995349ebde2a274ae9e85c"},
+]
+pytest = [
+    {file = "pytest-3.10.1-py2.py3-none-any.whl", hash = "sha256:3f193df1cfe1d1609d4c583838bea3d532b18d6160fd3f55c9447fdca30848ec"},
+    {file = "pytest-3.10.1.tar.gz", hash = "sha256:e246cf173c01169b9617fc07264b7b1316e78d7a650055235d6d897bc80d9660"},
+]
+pytest-watch = [
+    {file = "pytest-watch-4.2.0.tar.gz", hash = "sha256:06136f03d5b361718b8d0d234042f7b2f203910d8568f63df2f866b547b3d4b9"},
+]
+six = [
+    {file = "six-1.14.0-py2.py3-none-any.whl", hash = "sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"},
+    {file = "six-1.14.0.tar.gz", hash = "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"},
+]
+toolz = [
+    {file = "toolz-0.10.0.tar.gz", hash = "sha256:08fdd5ef7c96480ad11c12d472de21acd32359996f69a5259299b540feba4560"},
+]
+watchdog = [
+    {file = "watchdog-0.10.1.tar.gz", hash = "sha256:d64786787b14c8c6a71a8cc014056776ba6b52e85d1164ef2ab50aec02723a3d"},
+]
+zipp = [
+    {file = "zipp-1.1.0-py2.py3-none-any.whl", hash = "sha256:15428d652e993b6ce86694c3cccf0d71aa7afdc6ef1807fa25a920e9444e0281"},
+    {file = "zipp-1.1.0.tar.gz", hash = "sha256:d9d2efe11d3a3fb9184da550d35bd1319dc8e30a63255927c82bb42fca1f4f7c"},
+]
