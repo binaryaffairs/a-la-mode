@@ -12,7 +12,7 @@ database.
 
 The expectation is that different "execution engines" can parse this description
 and perform the work described, avoiding outputting to locations that have
-successfully† ran before
+successfully† been used before.
 
 † Success detection is not trivial, something existing in the location is not
 enough, some metadata or record of the task executions is needed.
