@@ -40,7 +40,9 @@ for task in [eg_dag.tasks['blur'], eg_dag.tasks['edge_enhance']]:
 for task in [eg_dag.tasks['blur'], eg_dag.tasks['edge_enhance']]:
     eg_dag.tasks['collage'].add_dep(task)
 
+encoded_dag = eg_dag.encode()
+
 def test_outputs():
-    for _name, task in eg_dag.encode()['tasks'].items():
+    for _name, task in encoded_dag['tasks'].items():
         output = task['output']
         assert output == sha1(bencode(dissoc(task, 'output')))
