@@ -24,7 +24,7 @@ class Dag:
         }
         return result
 
-@dataclass
+@dataclass(frozen=True)
 class Task:
     name: str
     spec: dict
