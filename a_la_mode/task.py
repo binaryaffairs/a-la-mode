@@ -21,7 +21,9 @@ class Dag:
         super().__getattribute__(name)
 
     def task(self, name, spec):
-        self.tasks.append(Task(name, spec))
+        task = Task(name, spec)
+        self.tasks.append(task)
+        return task
 
     def encode(self):
         result = {
