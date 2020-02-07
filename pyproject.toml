@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "a-la-mode"
-version = "0.1.0"
+version = "0.1.1"
 description = "A tool for describing pure data pipelines that enables avoiding repeating work (incrementality) and keeping old data around (provenance)"
 authors = ["thattommyhall <thattommyhall@gmail.com>"]
 license = "MIT"
