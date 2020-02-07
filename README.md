@@ -19,6 +19,11 @@ enough, some metadata or record of the task executions is needed.
 
 # Example
 
+If our workflow looks like this
+
+![](https://raw.githubusercontent.com/binaryaffairs/a-la-mode/master/dag.png)
+
+
 Create the 4 tasks
 
 ```python
