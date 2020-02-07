@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": ".direnv/python-3.8.1/bin/python3",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "cSpell.words": [
+        "deps",
+        "dicttoolz",
+        "itertoolz",
+        "pytest",
+        "toolz"
+    ],
+    "files.trimTrailingWhitespace": true
+}
