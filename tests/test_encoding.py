@@ -46,3 +46,8 @@ def test_outputs():
     for _name, task in encoded_dag['tasks'].items():
         output = task['output']
         assert output == sha1(bencode(dissoc(task, 'output')))
+
+def test_inputs():
+    for task in eg_dag.tasks.values():
+        assert {dep.name for dep in task.deps} == \
+               set(encoded_dag['tasks'][task.name]['inputs'].keys())
