@@ -6,8 +6,8 @@ import pprint
 pp = pprint.PrettyPrinter(indent=2).pprint
 import hashlib
 
-def sha1(s):
-    return hashlib.sha1(s).hexdigest()
+def sha(s):
+    return hashlib.sha256(s).hexdigest()
 
 @dataclass
 class Dag:
@@ -43,9 +43,8 @@ class Task:
 def encode(task):
     if not task.deps:
         result = assoc(task.spec, 'inputs', task.inputs)
-        output_sha = sha1(bencode(result))
+        output_sha = sha(bencode(result))
         return assoc(result, 'output', output_sha)
     first_dep = task.deps[0]
     inputs = assoc(task.inputs, first_dep.name, encode(first_dep)['output'])
     return encode(Task(task.name, task.spec, task.deps[1:], inputs))
-

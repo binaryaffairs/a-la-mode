@@ -1,4 +1,4 @@
-from a_la_mode import Task, Dag, sha1, dissoc
+from a_la_mode import Task, Dag, sha, dissoc
 from bencode import bencode
 import pytest
 
@@ -46,7 +46,7 @@ encoded_dag = eg_dag.encode()
 def test_outputs():
     for _name, task in encoded_dag['tasks'].items():
         output = task['output']
-        assert output == sha1(bencode(dissoc(task, 'output')))
+        assert output == sha(bencode(dissoc(task, 'output')))
 
 def test_inputs():
     for task in eg_dag.tasks:
