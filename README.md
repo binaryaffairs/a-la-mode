@@ -21,7 +21,7 @@ enough, some metadata or record of the task executions is needed.
 
 Create the 4 tasks
 
-```
+```python
 from a_la_mode import Task, Dag, pp
 from deepdiff import DeepDiff
 
@@ -61,7 +61,7 @@ dag.task('collage',
 
 Connect them up with the basic DSL
 
-```
+```python
 for task in [dag.blur, dag.edge_enhance]:
     task.add_dep(dag.download_images)
 
@@ -71,12 +71,12 @@ for task in [dag.blur, dag.edge_enhance]:
 
 encode the initial dag
 
-```
+```python
 encoded_dag = dag.encode()
 pp(encoded_dag)
 ```
 
-```
+```python
 { 'meta': {'schedule': '@daily'},
   'tasks': { 'blur': { 'command': 'python transform_images.py blur',
                        'image': 'collage',
@@ -104,13 +104,13 @@ pp(encoded_dag)
 
 Change it and re-encode it after (this is just for demo, is not the expected usage)
 
-```
+```python
 dag.blur.spec['sha'] = 'qwetr3'
 encoded_changed_dag = dag.encode()
 pp(encoded_changed_dag)
 ```
 
-```
+```python
 { 'meta': {'schedule': '@daily'},
   'tasks': { 'blur': { 'command': 'python transform_images.py blur',
                        'image': 'collage',
@@ -138,10 +138,11 @@ pp(encoded_changed_dag)
 
 To save you time examining the output, we can take a look with DeepDiff
 
-```
+```python
 pp(DeepDiff(encoded_dag, encoded_changed_dag))
 ```
-```
+
+```python
 { 'values_changed': { "root['tasks']['blur']['output']": { 'new_value': '4df7200d1f836f7372ce01761c9cb9e0d2bc7d1abc7ee9c1abe8dc7df9a67e5e',
                                                            'old_value': '82695e5805a9cd091e42ae94469efe77a90907c96190c793cee3c7d58dc2bbe0'},
                       "root['tasks']['blur']['sha']": { 'new_value': 'qwetr3',
