@@ -12,14 +12,20 @@ def sha1(s):
 @dataclass
 class Dag:
     spec: dict
-    tasks: dict = field(default_factory=dict)
+    tasks: list = field(default_factory=list)
+
+    def __getattr__(self, name):
+        for task in self.tasks:
+            if task.name == name:
+                return task
+        super().__getattribute__(name)
 
     def task(self, name, spec):
-        self.tasks[name] = Task(name, spec)
+        self.tasks.append(Task(name, spec))
 
     def encode(self):
         result = {
-            "tasks": {name : encode(task) for name, task in self.tasks.items()},
+            "tasks": {task.name : encode(task) for task in self.tasks},
             "meta": self.spec
         }
         return result
