@@ -1,6 +1,7 @@
 from bencode import bencode, bdecode, bread, bwrite
 from dataclasses import dataclass, field
-from toolz.dicttoolz import assoc, dissoc
+from toolz.dicttoolz import assoc, dissoc, merge
+from toolz.itertoolz import first, drop
 import pprint
 pp = pprint.PrettyPrinter(indent=2).pprint
 import hashlib
@@ -14,27 +15,31 @@ class Dag:
     tasks: dict = field(default_factory=dict)
 
     def task(self, name, spec):
-        self.tasks[name] = Task(assoc(spec, 'name', name))
+        self.tasks[name] = Task(name, spec)
 
+    def encode(self):
+        result = {
+            "tasks": {name : encode(task) for name, task in self.tasks.items()},
+            "meta": self.spec
+        }
+        return result
 
 @dataclass
 class Task:
+    name: str
     spec: dict
-
-    def __post_init__(self):
-        self.refresh_output()
-
-    def refresh_output(self):
-        self.spec['output'] = sha1(bencode(dissoc(self.spec, 'output')))
-
+    deps: list = field(default_factory=list)
+    inputs: dict = field(default_factory=dict)
 
     def add_dep(self, other_task):
-        other_task.refresh_output()
-        dep_name = other_task.spec['name']
-        inputs = self.spec.get('inputs', {})
-        self.spec['inputs'] = inputs
-        self.spec['inputs'][dep_name] = other_task.spec['output']
-        self.refresh_output()
+        self.deps.append(other_task)
 
-def encode_dag(dag):
-    return bencode([task.spec for task in dag])
+def encode(task):
+    if not task.deps:
+        result = assoc(task.spec, 'inputs', task.inputs)
+        output_sha = sha1(bencode(result))
+        return assoc(result, 'output', output_sha)
+    first_dep = first(task.deps)
+    inputs = assoc(task.inputs, first_dep.name, encode(first_dep)['output'])
+    return encode(Task(task.name, task.spec, task.deps[1:], inputs))
+

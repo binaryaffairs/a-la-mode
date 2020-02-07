@@ -1,4 +1,4 @@
-from a_la_mode import Task, Dag, sha1, encode_dag, dissoc
+from a_la_mode import Task, Dag, sha1, dissoc
 from bencode import bencode
 
 eg_dag = Dag({
@@ -41,6 +41,6 @@ for task in [eg_dag.tasks['blur'], eg_dag.tasks['edge_enhance']]:
     eg_dag.tasks['collage'].add_dep(task)
 
 def test_outputs():
-    for _name, task in eg_dag.tasks.items():
-        output = task.spec['output']
-        assert output == sha1(bencode(dissoc(task.spec, 'output')))
+    for _name, task in eg_dag.encode()['tasks'].items():
+        output = task['output']
+        assert output == sha1(bencode(dissoc(task, 'output')))
