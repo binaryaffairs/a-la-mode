@@ -38,6 +38,20 @@ version = "0.4.3"
 
 [[package]]
 category = "dev"
+description = "Deep Difference and Search of any Python object/data."
+name = "deepdiff"
+optional = false
+python-versions = ">=3.5"
+version = "4.2.0"
+
+[package.dependencies]
+ordered-set = ">=3.1.1"
+
+[package.extras]
+murmur = ["mmh3"]
+
+[[package]]
+category = "dev"
 description = "Pythonic argument parser, that will make you smile"
 name = "docopt"
 optional = false
@@ -70,6 +84,14 @@ version = "5.0.0"
 
 [package.dependencies]
 six = ">=1.0.0,<2.0.0"
+
+[[package]]
+category = "dev"
+description = "A MutableSet that remembers its order, so that every entry has an index."
+name = "ordered-set"
+optional = false
+python-versions = ">=2.7"
+version = "3.1.1"
 
 [[package]]
 category = "dev"
@@ -231,7 +253,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "unittest2", "jaraco.itertools"]
 
 [metadata]
-content-hash = "f7f518ba5d3f9f7d5d5b4074389078e3b553ccd89ba78597cf93d7cbd110dfbc"
+content-hash = "08d9081d500d941c1a43996d07bdbc6de5b2583eb5d3417fec43a30b695417dd"
 python-versions = "^3.5"
 
 [metadata.files]
@@ -251,6 +273,10 @@ colorama = [
     {file = "colorama-0.4.3-py2.py3-none-any.whl", hash = "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff"},
     {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
 ]
+deepdiff = [
+    {file = "deepdiff-4.2.0-py3-none-any.whl", hash = "sha256:b3fa588d1eac7fa318ec1fb4f2004568e04cb120a1989feda8e5e7164bcbf07a"},
+    {file = "deepdiff-4.2.0.tar.gz", hash = "sha256:ed7342d3ed3c0c2058a3fb05b477c943c9959ef62223dca9baa3375718a25d87"},
+]
 docopt = [
     {file = "docopt-0.6.2.tar.gz", hash = "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"},
 ]
@@ -262,6 +288,9 @@ more-itertools = [
     {file = "more-itertools-5.0.0.tar.gz", hash = "sha256:38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4"},
     {file = "more_itertools-5.0.0-py2-none-any.whl", hash = "sha256:c0a5785b1109a6bd7fac76d6837fd1feca158e54e521ccd2ae8bfe393cc9d4fc"},
     {file = "more_itertools-5.0.0-py3-none-any.whl", hash = "sha256:fe7a7cae1ccb57d33952113ff4fa1bc5f879963600ed74918f1236e212ee50b9"},
+]
+ordered-set = [
+    {file = "ordered-set-3.1.1.tar.gz", hash = "sha256:a7bfa858748c73b096e43db14eb23e2bc714a503f990c89fac8fab9b0ee79724"},
 ]
 pathlib2 = [
     {file = "pathlib2-2.3.5-py2.py3-none-any.whl", hash = "sha256:0ec8205a157c80d7acc301c0b18fbd5d44fe655968f5d947b6ecef5290fc35db"},
