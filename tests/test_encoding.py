@@ -1,4 +1,4 @@
-from a_la_mode import Task, Dag, sha, dissoc
+from a_la_mode import Task, Dag, sha
 from bencode import bencode
 from toolz.dicttoolz import dissoc
 from deepdiff import DeepDiff
