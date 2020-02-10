@@ -22,7 +22,9 @@ def test_changed():
                 "root['tasks']['collage']['inputs']['blur']"])
 
 def test_values_match():
-    assert encoded_changed_dag['tasks']['blur']['output'] == encoded_changed_dag['tasks']['collage']['inputs']['blur']
+    assert encoded_changed_dag['tasks']['blur']['output'] == \
+           encoded_changed_dag['tasks']['collage']['inputs']['blur']
+
     assert encoded_changed_dag['tasks']['blur']['sha'] ==  'qwetr3'
 
 def test_outputs():
