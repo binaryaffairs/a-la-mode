@@ -7,9 +7,7 @@ import pytest
 from .shared import eg_dag, encoded_dag
 
 eg_dag.blur.spec['sha'] = 'qwetr3'
-
-changed_dag = eg_dag
-encoded_changed_dag = changed_dag.encode()
+encoded_changed_dag = eg_dag.encode()
 
 def test_unchanged():
     assert encoded_dag['meta'] == encoded_changed_dag['meta']
