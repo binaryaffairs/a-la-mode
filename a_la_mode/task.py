@@ -25,6 +25,13 @@ class Dag:
         self.tasks.append(task)
         return task
 
+    def bencode(self):
+        return bencode.bencode(self.encode())
+
+    def save(self, filename):
+        with open(filename, 'wb') as f:
+            bencode.bwrite(self.encode(), f)
+
     def encode(self):
         result = {
             "tasks": {task.name : encode_task(task) for task in self.tasks},
