@@ -1,6 +1,7 @@
 from a_la_mode import Task, Dag, sha, dissoc
 from bencode import bencode
 from toolz.dicttoolz import dissoc
+from deepdiff import DeepDiff
 import pytest
 
 eg_dag = Dag({
@@ -54,21 +55,15 @@ def test_unchanged():
         assert encoded_dag['tasks'][task] == encoded_changed_dag['tasks'][task]
 
 def test_changed():
-    # blurs sha and output changed
-    assert encoded_dag['tasks']['blur']['sha'] != encoded_changed_dag['tasks']['blur']['sha']
-    assert encoded_dag['tasks']['blur']['output'] != encoded_changed_dag['tasks']['blur']['output']
+    assert DeepDiff(encoded_dag, encoded_changed_dag)['values_changed'].keys() == \
+           set(["root['tasks']['blur']['output']",
+                "root['tasks']['blur']['sha']",
+                "root['tasks']['collage']['output']",
+                "root['tasks']['collage']['inputs']['blur']"])
 
-    # only blurs sha and output changed
-    assert dissoc(encoded_dag['tasks']['blur'], 'sha', 'output') == \
-           dissoc(encoded_changed_dag['tasks']['blur'], 'sha', 'output')
-
-    # collages blur input changed
-    assert encoded_dag['tasks']['collage']['inputs']['blur'] != \
-           encoded_changed_dag['tasks']['collage']['inputs']['blur']
-
-    # only collages blur input changed
-    assert dissoc(encoded_dag['tasks']['collage']['inputs'], 'blur') == \
-           dissoc(encoded_changed_dag['tasks']['collage']['inputs'], 'blur')
+def test_values_match():
+    assert encoded_changed_dag['tasks']['blur']['output'] == encoded_changed_dag['tasks']['collage']['inputs']['blur']
+    assert encoded_changed_dag['tasks']['blur']['sha'] ==  'qwetr3'
 
 def test_outputs():
     for _name, task in encoded_dag['tasks'].items():
