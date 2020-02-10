@@ -14,6 +14,11 @@ class Dag:
     spec: dict
     tasks: list = field(default_factory=list)
 
+    @classmethod
+    def load(cls, file):
+        with file.open('rb') as f:
+            return bencode.bdecode(f.read())
+
     def __getattr__(self, name):
         for task in self.tasks:
             if task.name == name:
