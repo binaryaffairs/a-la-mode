@@ -3,6 +3,9 @@
 A tool for describing pure data pipelines that enables avoiding repeating work
 (incrementality) and keeping old data around (provenance)
 
+You may want to watch [the talk from Yow](https://www.youtube.com/watch?v=jjVp4QudLaw) 
+for more context to the project
+
 The DSL is inspired by airflow, the file generated is a
 [bencoded](https://en.wikipedia.org/wiki/Bencode) description of the flow with
 unique IDs for the outputs of each step, that will change if the task
